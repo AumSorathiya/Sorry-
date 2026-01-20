@@ -3,20 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I am Sorry</title>
+    <title>Sorry Sis!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="icon">💝</div>
-            <h1>I'm So Sorry</h1>
-            <p>I value our relationship more than being right. I made a mistake, and I truly regret how it affected you.</p>
-            <div class="message-box">
-                "Please forgive me?"
-            </div>
-            <button onclick="alert('Thank you for listening. ❤️')">Send Forgiveness</button>
+    <div class="background-animation" id="bg"></div>
+
+    <div class="card">
+        <div class="floating-emoji">🥺</div>
+        <h1>Sorry, Sis!</h1>
+        <p>I know I can be annoying sometimes, but life is boring without you. Can we make up?</p>
+        
+        <div class="button-group">
+            <button class="yes-btn" onclick="forgive()">Yes, I forgive you</button>
+            <button class="no-btn" id="move-btn">No way!</button>
         </div>
     </div>
+
+    <script>
+        // Make the "No" button run away
+        const moveBtn = document.getElementById('move-btn');
+        moveBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            moveBtn.style.position = 'absolute';
+            moveBtn.style.left = x + 'px';
+            moveBtn.style.top = y + 'px';
+        });
+
+        function forgive() {
+            alert("Best sister ever! I'll buy you a treat later. ❤️");
+        }
+    </script>
 </body>
 </html>
